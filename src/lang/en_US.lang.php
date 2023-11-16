@@ -120,7 +120,6 @@ $sm_lang = array(
 		'no_logs' => 'No logs',
 	),
 	'servers' => array(
-		'channel_status' => 'Channel Status',
 		'server' => 'Server',
 		'status' => 'Status',
 		'label' => 'Label',

@@ -74,7 +74,6 @@ class StatusController extends AbstractServerController {
 			if($server['active'] == 'no') {
 				continue;
 			}
-			echo ($server['channel_status']);
 			$server['last_checked_nice'] = psm_timespan($server['last_check']);
 			$server['last_online_nice'] = psm_timespan($server['last_online']);
 			$server['last_channel_status'] = psm_get_lang('implant', $server['channel_status']);

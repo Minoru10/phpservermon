@@ -55,6 +55,7 @@ class StatusController extends AbstractServerController {
 		$layout_data = array(
 			'label_last_check' => psm_get_lang('servers', 'last_check'),
 			'label_last_online' => psm_get_lang('servers', 'last_online'),
+			'label_channel_status' => psm_get_lang('implant', 'channel_status'),
 			'label_rtime' => psm_get_lang('servers', 'latency'),
 			'block_layout_active'	=> ($layout == 0) ? 'active' : '',
 			'list_layout_active'	=> ($layout != 0) ? 'active' : '',
@@ -73,8 +74,10 @@ class StatusController extends AbstractServerController {
 			if($server['active'] == 'no') {
 				continue;
 			}
+			echo ($server['channel_status']);
 			$server['last_checked_nice'] = psm_timespan($server['last_check']);
 			$server['last_online_nice'] = psm_timespan($server['last_online']);
+			$server['last_channel_status'] = psm_get_lang('implant', $server['channel_status']);
 			$server['url_view'] = psm_build_url(array('mod' => 'server', 'action' => 'view', 'id' => $server['server_id'], 'back_to' => 'server_status'));
 
 			if ($server['status'] == "off") {

@@ -77,7 +77,9 @@ abstract class AbstractServerController extends AbstractController {
 					`s`.`warning_threshold_counter`,
 					`s`.`timeout`,
 					`s`.`website_username`,
-					`s`.`website_password`
+					`s`.`website_password`,
+					`s`.`channel_status`,
+					`s`.`product_id`,
 				FROM `".PSM_DB_PREFIX."servers` AS `s`
 				{$sql_join}
 				{$sql_where}
@@ -104,6 +106,7 @@ abstract class AbstractServerController extends AbstractController {
 		$server['email'] = psm_get_lang('system', $server['email']);
 		$server['sms'] = psm_get_lang('system', $server['sms']);
 		$server['pushover'] = psm_get_lang('system', $server['pushover']);
+		$server['channel_status'] = psm_get_lang('implant', $server['channel_status']);
 
 		if($server['status'] == 'on' && $server['warning_threshold_counter'] > 0) {
 			$server['status'] = 'warning';

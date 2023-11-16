@@ -70,6 +70,11 @@ $sm_lang = array(
 		'user' => 'Users',
 		'help' => 'Help',
 	),
+	'implant' => array(
+		'channel_status' => 'Channel Status',
+		'connected' => 'Connected',
+		'idle' => 'Idle',
+	),
 	'users' => array(
 		'user' => 'User',
 		'name' => 'Name',
@@ -115,6 +120,7 @@ $sm_lang = array(
 		'no_logs' => 'No logs',
 	),
 	'servers' => array(
+		'channel_status' => 'Channel Status',
 		'server' => 'Server',
 		'status' => 'Status',
 		'label' => 'Label',

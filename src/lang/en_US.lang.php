@@ -182,9 +182,6 @@ $sm_lang = array(
 		'error_server_ip_bad_website' => 'The website URL is not valid.',
 		'error_server_type_invalid' => 'The selected server type is invalid.',
 		'error_server_warning_threshold_invalid' => 'The warning threshold must be a valid integer greater than 0.',
-		'channel_status' => 'Channel Status',
-		'connected' => 'Connected',
-		'idle' => 'Idle',
 	),
 	'config' => array(
 		'general' => 'General',

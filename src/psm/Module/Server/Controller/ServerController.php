@@ -483,6 +483,7 @@ class ServerController extends AbstractServerController {
 			'label_yes' => psm_get_lang('system', 'yes'),
 			'label_no' => psm_get_lang('system', 'no'),
 			'label_add_new' => psm_get_lang('system', 'add_new'),
+			'label_channel_status' => psm_get_lang('servers', 'channel_status'),
 		);
 	}
 

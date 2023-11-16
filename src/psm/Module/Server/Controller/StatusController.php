@@ -74,19 +74,21 @@ class StatusController extends AbstractServerController {
 			if($server['active'] == 'no') {
 				continue;
 			}
-			$server['last_checked_nice'] = psm_timespan($server['last_check']);
-			$server['last_online_nice'] = psm_timespan($server['last_online']);
-			$server['last_channel_status'] = psm_get_lang('implant', $server['channel_status']);
-			$server['url_view'] = psm_build_url(array('mod' => 'server', 'action' => 'view', 'id' => $server['server_id'], 'back_to' => 'server_status'));
+				if ($server['product_id'] == 1){
+					$server['last_checked_nice'] = psm_timespan($server['last_check']);
+					$server['last_online_nice'] = psm_timespan($server['last_online']);
+					$server['last_channel_status'] = psm_get_lang('implant', $server['channel_status']);
+					$server['url_view'] = psm_build_url(array('mod' => 'server', 'action' => 'view', 'id' => $server['server_id'], 'back_to' => 'server_status'));
 
-			if ($server['status'] == "off") {
-				$layout_data['servers_offline'][] = $server;
-			} elseif($server['warning_threshold_counter'] > 0) {
-				$server['class_warning'] = 'warning';
-				$layout_data['servers_offline'][] = $server;
-			} else {
-				$layout_data['servers_online'][] = $server;
-			}
+					if ($server['status'] == "off") {
+						$layout_data['servers_offline'][] = $server;
+					} elseif($server['warning_threshold_counter'] > 0) {
+						$server['class_warning'] = 'warning';
+						$layout_data['servers_offline'][] = $server;
+					} else {
+						$layout_data['servers_online'][] = $server;
+					}
+				}
 		}
 
 		$auto_refresh_seconds = psm_get_conf('auto_refresh_servers');

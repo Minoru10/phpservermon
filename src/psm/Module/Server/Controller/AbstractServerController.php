@@ -78,7 +78,8 @@ abstract class AbstractServerController extends AbstractController {
 					`s`.`timeout`,
 					`s`.`website_username`,
 					`s`.`website_password`,
-					`s`.`channel_status`
+					`s`.`channel_status`,
+					`s`.`product_id`
 				FROM `".PSM_DB_PREFIX."servers` AS `s`
 				{$sql_join}
 				{$sql_where}
